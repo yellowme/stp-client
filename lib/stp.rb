@@ -1,3 +1,6 @@
+require 'crypto'
+require 'faraday'
+
 require 'stp/config'
 
 require 'stp/structs/account'

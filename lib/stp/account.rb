@@ -1,7 +1,7 @@
 module STP
   module Account
     def self.create(account)
-      account.signature = Crypto::Commons.rsa_seal(STP.private_key, STP.passphrase, account.original_chain)
+      account.signature = Crypto::Commons.rsa_seal(STP.private_key, STP.private_key_password, account.original_chain)
       connection = Faraday.new(url: "#{STP.api_uri}/cuentaModule/fisica")
       response = connection.put do |req|
         req.url ''
@@ -13,7 +13,7 @@ module STP
     end
 
     def self.delete(account)
-      account.signature = Crypto::Commons.rsa_seal(STP.private_key, STP.passphrase, account.original_chain)
+      account.signature = Crypto::Commons.rsa_seal(STP.private_key, STP.private_key_password, account.original_chain)
       connection = Faraday.new(url: "#{STP.api_uri}/cuentaModule/fisica")
       response = connection.delete do |req|
         req.url ''

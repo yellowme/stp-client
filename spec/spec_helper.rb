@@ -1,5 +1,6 @@
 require 'rspec'
 require 'simplecov'
+require 'faker'
 
 require 'stp'
 

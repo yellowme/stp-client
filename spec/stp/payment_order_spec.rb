@@ -6,7 +6,7 @@ RSpec.describe STP::PaymentOrder do
     response
   end
 
-  describe 'create_payment_order' do
+  describe 'create' do
     context 'works ok! ' do
       context 'with valid data' do
         let(:withdrawal_id) { "3#{rand.to_s[2..3]}d#{rand.to_s[2..3]}c6-1d#{rand.to_s[2..3]}-40a6-afef-70d6b3a9336f" }
@@ -29,7 +29,7 @@ RSpec.describe STP::PaymentOrder do
 
         before do
           allow(STP::PaymentOrder).to receive(:create).
-            and_return(STPTestHelpers::MOCK_SUCCESS())
+            and_return(STPTestHelpers::PAYMENT_ORDER_MOCK_SUCCESS())
         end
 
         it do
@@ -62,7 +62,7 @@ RSpec.describe STP::PaymentOrder do
 
         before do
           allow(STP::PaymentOrder).to receive(:create).
-            and_return(STPTestHelpers::MOCK_SUCCESS())
+            and_return(STPTestHelpers::PAYMENT_ORDER_MOCK_SUCCESS())
         end
 
         it do
@@ -95,7 +95,7 @@ RSpec.describe STP::PaymentOrder do
 
         before do
           allow(STP::PaymentOrder).to receive(:create).
-            and_return(STPTestHelpers::MOCK_ERROR(-2))
+            and_return(STPTestHelpers::PAYMENT_ORDER_MOCK_ERROR(-2))
         end
 
         it { expect(subject['id']).to eq -2 }
