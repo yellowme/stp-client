@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.license      = 'MIT'
 
   spec.add_dependency "faraday", "~> 1.0"
-  spec.add_dependency "crypto_yellowme", "~> 0.3"
+  spec.add_dependency "crypto_yellowme", "~> 0.4"
 
   spec.add_development_dependency "rspec", "~> 3.8"
   spec.add_development_dependency "faker", "~> 2.0"
