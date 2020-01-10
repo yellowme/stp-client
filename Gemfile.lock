@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    stp_client (0.1.0)
+    stp_client (0.2.1)
       crypto_yellowme (~> 0.4)
       faraday (~> 1.0)
 
