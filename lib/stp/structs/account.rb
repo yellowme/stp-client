@@ -23,6 +23,10 @@ module STP
                     :phone,                              # telefono
                     :signature
 
+      def initialize
+        @company = STP.company
+      end
+
       def original_chain
         "||#{@company}|"\
           "#{@account}|"\

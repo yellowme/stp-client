@@ -38,6 +38,10 @@ module STP
                     :original_chain,
                     :signature
 
+      def initialize
+        @company = STP.company
+      end
+
       def original_chain
         "||#{@counterpart_institution}|"\
           "#{@company}|"\

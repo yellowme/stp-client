@@ -14,7 +14,6 @@ RSpec.describe STP::PaymentOrder do
           payment_order = STP::Structs::PaymentOrder.new
           payment_order.payment_concept = 'prueba veinte'
           payment_order.tracking_key = "#{Time.now.strftime '%j%y'}#{withdrawal_id.tr('-', '')[0, 24]}"
-          payment_order.company = 'FINVE'
           payment_order.beneficiary_account = '846180000000000016'
           payment_order.counterpart_institution = '846'
           payment_order.operant_institution = '90646'
@@ -46,7 +45,6 @@ RSpec.describe STP::PaymentOrder do
           payment_order = STP::Structs::PaymentOrder.new
           payment_order.payment_concept = 'prueba veinte'
           payment_order.tracking_key = "#{Time.now.strftime '%j%y'}#{withdrawal_id.tr('-', '')[0, 24]}"
-          payment_order.company = STP.company
           payment_order.folio = withdrawal_id
           payment_order.beneficiary_account = '846180000400000001'
           payment_order.counterpart_institution = '846'
@@ -80,7 +78,6 @@ RSpec.describe STP::PaymentOrder do
           payment_order = STP::Structs::PaymentOrder.new
           payment_order.payment_concept = 'prueba veinte'
           payment_order.tracking_key = 'pruebaFinve002'
-          payment_order.company = 'FINVE'
           payment_order.beneficiary_account = '846180000000000016'
           payment_order.counterpart_institution = '846'
           payment_order.operant_institution = '90646'

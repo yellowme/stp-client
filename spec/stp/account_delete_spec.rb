@@ -12,7 +12,6 @@ RSpec.describe STP::Account do
         let(:account_obj) do
           account = STP::Structs::Account.new
           account.account = '01010101'
-          account.company = STP.company
           account.name = Faker::Name.first_name
           account.paternal_surname = Faker::Name.last_name
           account.maternal_surname = Faker::Name.last_name
@@ -75,7 +74,6 @@ RSpec.describe STP::Account do
         let(:account_obj) do
           account = STP::Structs::Account.new
           account.account = '01010101'
-          account.company = STP.company
           account.name = Faker::Name.first_name
           account.paternal_surname = Faker::Name.last_name
           account.maternal_surname = Faker::Name.last_name
