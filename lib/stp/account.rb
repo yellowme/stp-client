@@ -9,7 +9,7 @@ module STP
         req.body = account.to_json
       end
       hash = JSON.parse(response.body)
-      hash
+      raise STP::STPError.new(hash['message']) unless hash['id'] == 0
     end
 
     def self.delete(account)
@@ -21,7 +21,7 @@ module STP
         req.body = account.to_json
       end
       hash = JSON.parse(response.body)
-      hash
+      raise STP::STPError.new(hash['message']) unless hash['id'] == 0
     end
   end
 end

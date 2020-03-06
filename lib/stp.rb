@@ -5,6 +5,7 @@ require 'stp/structs/account'
 require 'stp/structs/payment_order'
 require 'stp/account'
 require 'stp/payment_order'
+require 'stp/stp_error'
 
 module STP
   def self.config

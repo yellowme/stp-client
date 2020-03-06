@@ -2,8 +2,7 @@ require 'support/stp_test_helpers'
 
 RSpec.describe STP::Account do
   subject do
-    response = STP::Account.create(account_obj)
-    response
+    STP::Account.create(account_obj)
   end
 
   describe 'account create' do
@@ -32,18 +31,14 @@ RSpec.describe STP::Account do
           account.phone = Faker::PhoneNumber.phone_number
           account
         end
-
+        
         before do
-          allow(STP::Account).to receive(:create).
-            and_return(STPTestHelpers::ACCOUNT_CREATE_MOCK_SUCCESS())
+          stub_request(:put, "#{STP.api_uri}/cuentaModule/fisica").to_return(
+            body: JSON.dump(STPTestHelpers::ACCOUNT_CREATE_MOCK_SUCCESS()), status: 200
+          )
         end
 
-        it do
-          response = subject
-          expect(response['id']).not_to be_nil
-          expect(response['id']).to be 0
-          expect(response['descripcionError']).to be_nil
-        end
+        it { expect{subject}.not_to raise_error }
       end
 
       context 'with minimal data' do
@@ -54,18 +49,14 @@ RSpec.describe STP::Account do
           account.rfc = 'RFCURP'
           account
         end
-
+        
         before do
-          allow(STP::Account).to receive(:create).
-            and_return(STPTestHelpers::ACCOUNT_CREATE_MOCK_SUCCESS())
+          stub_request(:put, "#{STP.api_uri}/cuentaModule/fisica").to_return(
+            body: JSON.dump(STPTestHelpers::ACCOUNT_CREATE_MOCK_SUCCESS()), status: 200
+          )
         end
 
-        it do
-          response = subject
-          expect(response['id']).not_to be_nil
-          expect(response['id']).to be 0
-          expect(response['descripcionError']).to be_nil
-        end
+        it { expect{subject}.not_to raise_error }
       end
     end
 
@@ -94,14 +85,14 @@ RSpec.describe STP::Account do
           account.phone = Faker::PhoneNumber.phone_number
           account
         end
-
+        
         before do
-          allow(STP::Account).to receive(:create).
-            and_return(STPTestHelpers::ACCOUNT_CREATE_MOCK_ERROR(-2))
+          stub_request(:put, "#{STP.api_uri}/cuentaModule/fisica").to_return(
+            body: JSON.dump(STPTestHelpers::ACCOUNT_CREATE_MOCK_ERROR(1)), status: 200
+          )
         end
 
-        it { expect(subject['id']).to eq -2 }
-        it { expect(subject['descripcionError']).not_to be_nil }
+        it { expect {subject}.to raise_error(STP::STPError) }
       end
     end
   end
