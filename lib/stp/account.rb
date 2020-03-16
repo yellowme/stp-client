@@ -10,8 +10,8 @@ module STP
       end
       puts response.body if STP.verbose
       hash = JSON.parse(response.body)
-      raise STP::Errors::AccountAlreadyExists.new(hash['id'], hash['message']) if hash['id'] == 1 && hash['message'] == "Cuenta Duplicada"
-      raise STP::Errors::STPError.new(hash['id'], hash['message']) unless hash['id'] == 0
+      raise STP::Errors::AccountAlreadyExists.new(hash['id'], hash['descripcion']) if hash['id'] == 1 && hash['descripcion'] == 'Cuenta Duplicada'
+      raise STP::Errors::STPError.new(hash['id'], hash['descripcion']) unless hash['id'] == 0
     end
 
     def self.delete(account)
@@ -24,7 +24,7 @@ module STP
       end
       puts response.body if STP.verbose
       hash = JSON.parse(response.body)
-      raise STP::Errors::STPError.new(hash['id'], hash['message']) unless hash['id'] == 0
+      raise STP::Errors::STPError.new(hash['id'], hash['descripcion']) unless hash['id'] == 0
     end
   end
 end

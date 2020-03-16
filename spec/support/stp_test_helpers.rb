@@ -1,7 +1,7 @@
 module STPTestHelpers
   def self.PAYMENT_ORDER_MOCK_ERROR(error_code)
     {
-      'descripcionError' => 'regular error msg',
+      'descripcion' => 'regular error msg',
       'id' => error_code,
     }
   end
@@ -16,9 +16,9 @@ module STPTestHelpers
     }
   end
 
-  def self.ACCOUNT_CREATE_MOCK_ERROR(error_code)
+  def self.ACCOUNT_CREATE_MOCK_ERROR(error_code, message='regular error msg')
     {
-      'descripcionError' => 'regular error msg',
+      'descripcion' => message,
       'id' => error_code,
     }
   end
@@ -32,7 +32,7 @@ module STPTestHelpers
 
   def self.ACCOUNT_DELETE_MOCK_ERROR(error_code)
     {
-      'descripcionError' => 'regular error msg',
+      'descripcion' => 'regular error msg',
       'id' => error_code,
     }
   end

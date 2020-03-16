@@ -96,7 +96,7 @@ RSpec.describe STP::PaymentOrder do
         end
 
         it { expect(subject['id']).to eq -2 }
-        it { expect(subject['descripcionError']).not_to be_nil }
+        it { expect(subject['descripcion']).not_to be_nil }
       end
     end
   end
