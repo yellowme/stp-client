@@ -21,7 +21,7 @@ RSpec.describe STP::Account do
           account.economic_activity = 'programador'
           account.street = Faker::Address.street_name
           account.exterior_number = Faker::Address.building_number
-          account.interior_nunmber = Faker::Address.building_number
+          account.interior_number = Faker::Address.building_number
           account.neighborhood = Faker::Address.community
           account.municipality = Faker::Address.community
           account.zip_code = Faker::Number.number(digits: 5)
@@ -85,7 +85,7 @@ RSpec.describe STP::Account do
           account.economic_activity = 'programador'
           account.street = Faker::Address.street_name
           account.exterior_number = Faker::Address.building_number
-          account.interior_nunmber = Faker::Address.building_number
+          account.interior_number = Faker::Address.building_number
           account.neighborhood = Faker::Address.community
           account.municipality = Faker::Address.community
           account.zip_code = Faker::Number.number(digits: 5)

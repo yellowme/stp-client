@@ -13,7 +13,7 @@ module STP
                     :economic_activity,                  # actividadEconomica
                     :street,                             # calle
                     :exterior_number,                    # numeroExterior
-                    :interior_nunmber,                   # numeroInterior
+                    :interior_number,                    # numeroInterior
                     :neighborhood,                       # colonia
                     :municipality,                       # alcaldiaMunicipio
                     :zip_code,                           # cp
@@ -47,7 +47,7 @@ module STP
           actividadEconomica: @economic_activity,
           calle: @street,
           numeroExterior: @exterior_number,
-          numeroInterior: @interior_nunmber,
+          numeroInterior: @interior_number,
           colonia: @neighborhood,
           alcaldiaMunicipio: @municipality,
           cp: @zip_code,
