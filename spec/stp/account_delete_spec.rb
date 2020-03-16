@@ -102,7 +102,7 @@ RSpec.describe STP::Account do
           )
         end
 
-        it { expect {subject}.to raise_error(STP::STPError) }
+        it { expect {subject}.to raise_error(STP::Errors::STPError) }
       end
     end
   end

@@ -5,7 +5,8 @@ require 'stp/structs/account'
 require 'stp/structs/payment_order'
 require 'stp/account'
 require 'stp/payment_order'
-require 'stp/stp_error'
+require 'stp/errors/stp_error'
+require 'stp/errors/account_already_exists'
 
 module STP
   def self.config
@@ -42,5 +43,13 @@ module STP
 
   def self.company
     @company
+  end
+
+  def self.verbose
+    @verbose
+  end
+
+  def self.verbose=(verbose)
+    @verbose = verbose
   end
 end
