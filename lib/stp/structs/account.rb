@@ -34,9 +34,9 @@ module STP
       end
 
       def as_json(_options = {})
-        name = @name.present? ? I18n.transliterate(@name) : nil,
-        paternal_surname = @paternal_surname.present? ? I18n.transliterate(@paternal_surname) : nil,
-        maternal_surname = @maternal_surname.present? ? I18n.transliterate(@maternal_surname) : nil,
+        name = @name.present? ? I18n.transliterate(@name) : nil
+        paternal_surname = @paternal_surname.present? ? I18n.transliterate(@paternal_surname) : nil
+        maternal_surname = @maternal_surname.present? ? I18n.transliterate(@maternal_surname) : nil
         {
           cuenta: @account,
           empresa: @company,
