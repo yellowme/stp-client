@@ -41,7 +41,7 @@ RSpec.describe STP::Account do
           allow(STP::Account).to receive(:create).
             and_return(STPTestHelpers::ACCOUNT_DELETE_MOCK_SUCCESS())
         end
-        
+
         before do
           stub_request(:delete, "#{STP.api_uri}/cuentaModule/fisica").to_return(
             body: JSON.dump(STPTestHelpers::ACCOUNT_DELETE_MOCK_SUCCESS()), status: 200
@@ -59,7 +59,7 @@ RSpec.describe STP::Account do
           account.rfc = 'RFCURP'
           account
         end
-        
+
         before do
           stub_request(:delete, "#{STP.api_uri}/cuentaModule/fisica").to_return(
             body: JSON.dump(STPTestHelpers::ACCOUNT_DELETE_MOCK_SUCCESS()), status: 200
@@ -95,7 +95,7 @@ RSpec.describe STP::Account do
           account.phone = Faker::PhoneNumber.phone_number
           account
         end
-        
+
         before do
           stub_request(:delete, "#{STP.api_uri}/cuentaModule/fisica").to_return(
             body: JSON.dump(STPTestHelpers::ACCOUNT_DELETE_MOCK_ERROR(-2)), status: 200
