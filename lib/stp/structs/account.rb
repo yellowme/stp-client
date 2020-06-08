@@ -37,9 +37,9 @@ module STP
         {
           cuenta: @account,
           empresa: @company,
-          nombre: @name,
-          apellidoPaterno: @paternal_surname,
-          apellidoMaterno: @maternal_surname,
+          nombre: I18n.transliterate(@name),
+          apellidoPaterno: I18n.transliterate(@paternal_surname),
+          apellidoMaterno: I18n.transliterate(@maternal_surname),
           rfcCurp: @rfc,
           fechaNacimiento: @birthdate,
           genero: @sex,
