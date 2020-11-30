@@ -16,8 +16,8 @@ module STP
                     :interior_number,                    # numeroInterior
                     :neighborhood,                       # colonia
                     :municipality,                       # alcaldiaMunicipio
-                    :zip_code,                           # cp
-                    :country,                            # pais
+                    :zip_code,                           # codigoPostal
+                    :country,                            # paisNacimiento
                     :email,                              # email
                     :identification_id,                  # idIdentificacion: credencial para votar (INE/IFE)
                     :phone,                              # telefono
@@ -49,12 +49,12 @@ module STP
           entidadFederativa: @state,
           actividadEconomica: @economic_activity,
           calle: @street,
-          numeroExterior: @exterior_number,
-          numeroInterior: @interior_number,
+          numExterior: @exterior_number,
+          numInterior: @interior_number,
           colonia: @neighborhood,
           alcaldiaMunicipio: @municipality,
-          cp: @zip_code,
-          pais: @country,
+          codigoPostal: @zip_code,
+          paisNacimiento: @country,
           email: @email,
           idIdentificacion: @identification_id,
           telefono: @phone,
